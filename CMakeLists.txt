@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
-project(my_cmake_project)
+project(hellolib)
 
-add_library(hellolib SHARED src/hellolib.cpp)
+add_library(hellolib STATIC src/hellolib.cpp)
 
 target_include_directories(hellolib PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -36,6 +36,6 @@ install(FILES
 
 install(
     DIRECTORY include/
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    FILES_MATCHING PATTERN "*.hpp"
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/include
+    FILES_MATCHING PATTERN "*.h*"
 )
