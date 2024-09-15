@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
   '';
 
   configurePhase = ''
-    cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$out
+    cmake ${src} .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$out
   '';
 
   buildPhase = ''
